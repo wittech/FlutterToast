@@ -17,6 +17,12 @@ rootProject.allprojects {
         google()
         jcenter()
     }
+
+    // gradle.projectsEvaluated {
+    //     tasks.withType(JavaCompile) {
+    //         options.compilerArgs << "-Xlint:deprecation"
+    //     }
+    // }  
 }
 
 apply plugin: 'com.android.library'
@@ -31,4 +37,8 @@ android {
     lintOptions {
         disable 'InvalidPackage'
     }
+}
+dependencies {
+//    implementation fileTree(dir: 'libs', include: ['*.jar'])
+    implementation 'androidx.core:core:1.0.2'
 }

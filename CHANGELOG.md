@@ -1,3 +1,15 @@
+## [3.1.3]
+
+- Toast optimized for Android
+
+## [3.1.2]
+
+- Flutter analysis failed fixed
+
+## [3.1.1]
+
+- Not Compiling in android (issue with AndroidX)
+
 ## [3.1.0]
 
 - Migrated to AndroidX

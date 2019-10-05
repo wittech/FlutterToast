@@ -1,5 +1,5 @@
 #import "FluttertoastPlugin.h"
-#import "UIView+Toast.h"
+#import "UIView+ToastView.h"
 
 static NSString *const CHANNEL_NAME = @"PonnamKarthik/fluttertoast";
 
@@ -37,7 +37,7 @@ static NSString *const CHANNEL_NAME = @"PonnamKarthik/fluttertoast";
 
 - (void)handleMethodCall:(FlutterMethodCall *)call result:(FlutterResult)result {
     if([@"cancel" isEqualToString:call.method]) {
-        [[UIApplication sharedApplication].delegate.window.rootViewController.view hideAllToasts];
+        [[UIApplication sharedApplication].delegate.window.rootViewController.view hideAllToastsView];
         result([NSNumber numberWithBool:true]);
     } else if ([@"showToast" isEqualToString:call.method]) {
         NSString *msg = call.arguments[@"msg"];
@@ -60,7 +60,7 @@ static NSString *const CHANNEL_NAME = @"PonnamKarthik/fluttertoast";
         else if (time < 1) time = 1;
 
 
-        CSToastStyle *style = [[CSToastStyle alloc] initWithDefaultStyle];
+        CSToastViewStyle *style = [[CSToastViewStyle alloc] initWithDefaultStyle];
         style.messageFont = [UIFont systemFontOfSize:cgf];
         style.backgroundColor = [self colorWithHex:bgcolor.unsignedIntegerValue];
         style.messageColor = [self colorWithHex:textcolor.unsignedIntegerValue];
@@ -73,15 +73,15 @@ static NSString *const CHANNEL_NAME = @"PonnamKarthik/fluttertoast";
 
         if ([gravity isEqualToString:@"top"]) {
             
-            [[self _readKeyWindow] makeToast:msg duration:time position:CSToastPositionTop style:style];
+            [[self _readKeyWindow] makeToastView:msg duration:time position:CSToastViewPositionTop style:style];
             
         } else if ([gravity isEqualToString:@"center"]) {
             
-            [[self _readKeyWindow] makeToast:msg duration:time position:CSToastPositionCenter style:style];
+            [[self _readKeyWindow] makeToastView:msg duration:time position:CSToastViewPositionCenter style:style];
             
         } else {
             
-            [[self _readKeyWindow] makeToast:msg duration:time position:CSToastPositionBottom style:style];
+            [[self _readKeyWindow] makeToastView:msg duration:time position:CSToastViewPositionBottom style:style];
             
         }
         result([NSNumber numberWithBool:true]);

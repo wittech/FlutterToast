@@ -1,3 +1,53 @@
+## [7.0.2]
+
+- iOS Toast behind keyboard fixed. #203
+
+## [7.0.1+1]
+
+- Readme Updated
+
+## [7.0.1]
+
+- Android Build failed fix
+- iOS Crash Fix
+
+## [7.0.0]
+
+- Reverted to Old code `Fluttertoast`
+- Also contains new code `FToast`
+
+## [6.0.1]
+
+- Support for old `Fluttertoast.showToast`
+
+## [6.0.0]
+
+- Complete new package
+- Now plugin dont use any native code
+
+## [5.0.2]
+
+- Web Fix after name change
+
+
+## [5.0.1]
+
+- Many things changes on android side (this will break your current implementation)
+- `Fluttertoast.` to `FlutterToast.`
+- many fixes
+
+## [4.0.2]
+
+- Delete print on fluttertoast_web
+
+## [4.0.1]
+
+- ReadMe Fixes
+
+## [4.0.0]
+
+- Added Web Support
+
 ## [3.1.3]
 
 - Toast optimized for Android
